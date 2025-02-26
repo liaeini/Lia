@@ -1,110 +1,166 @@
 <!DOCTYPE html>
-<html lang="he-IL">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הגעתם למקום הנכון</title>
+    <title>My Digital Art Store</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            direction: rtl;
+            font-family: 'Cursive', sans-serif;
+            background-color: #ffe6f2;
+            color: #333;
             text-align: center;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
+
         header {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
+            background-color: #ff99cc;
+            padding: 20px;
         }
+
         header h1 {
-            margin: 0;
+            color: white;
+            font-size: 24px;
         }
-        section {
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .banner {
+            background-color: #ffccdd;
+            padding: 50px;
+            margin: 20px auto;
+        }
+
+        .gallery, .shop, .about, .contact {
+            display: none;
             padding: 20px;
         }
-        .stat {
-            display: inline-block;
-            width: 30%;
-            margin: 10px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-        }
-        .stat h2 {
-            margin: 0;
-            font-size: 2em;
-        }
-        .stat p {
-            font-size: 1.2em;
-        }
-        .content {
+
+        .art-container {
             display: flex;
             justify-content: center;
+            gap: 20px;
             flex-wrap: wrap;
         }
-        .content div {
-            width: 45%;
-            margin: 10px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
+
+        .art-item {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            position: fixed;
+
+        .art-item img {
             width: 100%;
-            bottom: 0;
+            border-radius: 8px;
+        }
+
+        .buy-btn {
+            background-color: #ff66a3;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .buy-btn:hover {
+            background-color: #ff3385;
+        }
+
+        footer {
+            background-color: #ff99cc;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>הגעתם למקום הנכון</h1>
+        <h1>Welcome to My Digital Art Store</h1>
+        <nav>
+            <ul>
+                <li><a onclick="showSection('home')">Home</a></li>
+                <li><a onclick="showSection('shop')">Shop</a></li>
+                <li><a onclick="showSection('about')">About</a></li>
+                <li><a onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <section>
-        <div class="stat">
-            <h2>עוקבים באינסטגרם</h2>
-            <p>0+</p>
-        </div>
-        <div class="stat">
-            <h2>מאזינים לפודקאסט</h2>
-            <p>0+</p>
-        </div>
-        <div class="stat">
-            <h2>סוחרים מוצלחים</h2>
-            <p>0+</p>
+
+    <!-- עמוד ראשי -->
+    <section id="home" class="banner">
+        <h2>Discover Unique Digital Art</h2>
+        <p>High-quality artwork for startups and businesses</p>
+    </section>
+
+    <!-- חנות -->
+    <section id="shop" class="shop">
+        <h2>Shop - Available Artworks</h2>
+        <div class="art-container">
+            <div class="art-item">
+                <img src="art1.jpg" alt="Art 1">
+                <p>Abstract Digital Piece</p>
+                <button class="buy-btn">Buy with Bit</button>
+            </div>
+            <div class="art-item">
+                <img src="art2.jpg" alt="Art 2">
+                <p>Modern Aesthetic</p>
+                <button class="buy-btn">Buy with Bit</button>
+            </div>
         </div>
     </section>
-    <section class="content">
-        <div>
-            <h2>האינסטגרם שלי</h2>
-            <p>הכנתי לכם ים של תוכן חזק על השקעות ומסחר בשוק ההון</p>
-            <a href="https://www.instagram.com" target="_blank">למעבר לעמוד לחצו על התמונה</a>
-        </div>
-        <div>
-            <h2>הפודקאסט שלי</h2>
-            <p>"החלטות של עשירים" - אחד הפרקים הכי ויראליים שהוצאתי בפודקאסט "משחקי הכסף" על איך לבנות ב-2 ידיים את העתיד הכלכלי שלכם</p>
-            <a href="https://www.podcast.com" target="_blank">למעבר לעמוד לחצו על התמונה</a>
-        </div>
+
+    <!-- אודות -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a digital artist creating unique pieces for startups and businesses. My goal is to bring visual identity to brands through art.</p>
     </section>
-    <section class="content">
-        <div>
-            <h2>שיעור מתוך הקורס</h2>
-            <p>תיאור קצר על השיעור</p>
-            <a href="https://www.course.com" target="_blank">למעבר לשיעור לחצו על התמונה</a>
-        </div>
-        <div>
-            <h2>כתבה שעשו עלי בכלכליסט</h2>
-            <p>תיאור קצר על הכתבה</p>
-            <a href="https://www.calcalist.co.il" target="_blank">למעבר לכתבה לחצו על התמונה</a>
-        </div>
+
+    <!-- צור קשר -->
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Have a question or custom request? Reach out to me at:</p>
+        <p>Email: myemail@example.com</p>
     </section>
+
     <footer>
-        <p>התלמידים שלנו מספרים ש...</p>
+        <p>© 2025 My Digital Art Store | All rights reserved.</p>
     </footer>
+
+    <script>
+        function showSection(section) {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("shop").style.display = "none";
+            document.getElementById("about").style.display = "none";
+            document.getElementById("contact").style.display = "none";
+            document.getElementById(section).style.display = "block";
+        }
+
+        // מציג את עמוד הבית כברירת מחדל
+        showSection('home');
+    </script>
+
 </body>
 </html>
